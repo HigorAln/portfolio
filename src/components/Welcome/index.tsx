@@ -8,7 +8,7 @@ export function Welcome() {
 				className="text-6xl md:text-7xl 2xl:text-9xl font-title"
 				initial={{ opacity: 0, y: 20 }}
 				layout
-				animate={{
+				whileInView={{
 					opacity: 1,
 					y: 0,
 					transition: { delay: 0.2 },
@@ -20,7 +20,7 @@ export function Welcome() {
 				className="font-poppins text-xl md:text-2xl mt-4 text-center w-[80%]"
 				layout
 				initial={{ opacity: 0, x: 20 }}
-				animate={{
+				whileInView={{
 					opacity: 1,
 					x: 0,
 					transition: { delay: 0.5 },
