@@ -17,10 +17,9 @@ export function AboutMe() {
 		forceUpdated();
 	}, []);
 
-	console.log(windows.current);
 	return (
 		<m.div
-			className="w-screen h-[100vh] flex flex-col items-center justify-center relative"
+			className="w-screen h-[80vh] flex flex-col items-center justify-center relative"
 			ref={ref}
 		>
 			<m.h1

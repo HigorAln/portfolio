@@ -1,111 +1,139 @@
 import { motion as m } from 'framer-motion';
-import { GitFork, LinkedinLogo } from 'phosphor-react';
+import { Card } from './Card';
 
 export function Projects() {
 	return (
-		<m.div className="flex flex-col  w-full">
+		<m.div className="flex flex-col w-full px-5 md:px-28">
 			<m.h1
-				className="text-5xl md:text-7xl sm:ml-10 md:ml-14 xl:ml-32 mb-8 md:mb-24 text-gray-900 tracking-widest"
+				className="text-5xl md:text-7xl mb-8 md:mb-24 text-gray-900 tracking-widest"
 				initial={{ opacity: 0, x: -200 }}
 				whileInView={{ opacity: 1, x: 0, transition: { delay: 0.5 } }}
 				viewport={{ once: true }}
 				layout
 			>
-				Some Projects:
+				some studies:
 			</m.h1>
 
-			{projects.map((project, index) => (
-				<m.div className="w-4/5 rounded-md relative self-center mb-20 bg-red-400">
-					<m.div
-						className="absolute h-full bg-white z-30"
-						initial={{ width: '100%' }}
-						whileInView={{ width: '0', transition: { delay: 0.7 } }}
-					/>
-					<m.div
-						className="absolute h-full bg-yellow-50 z-20"
-						initial={{ width: '100%' }}
-						whileInView={{ width: '0', transition: { delay: 0.9 } }}
-					/>
-					<m.div
-						className="absolute h-full bg-gray-100 z-10"
-						initial={{ width: '100%' }}
-						whileInView={{ width: '0', transition: { delay: 1.1 } }}
-					/>
-					<m.div
-						className="w-full rounded-md h-full flex-col sm:flex-row flex p-3"
-						initial={{ borderWidth: '0px' }}
-						whileInView={{
-							borderWidth: '1px',
-							transition: { delay: 1.1 },
-						}}
-						layout
-					>
-						<div className="w-11/12 rounded-md">
-							<h1 className="text-2xl mb-2 font-poppins text-white">
-								{project.title}
-							</h1>
-							<p className="text-sm font-poppins text-white">
-								{project.description}
-							</p>
-						</div>
-
-						<div className="flex flex-1 justify-center items-center flex-row sm:flex-col mt-5 sm:mt-0 gap-2">
-							<LinkedinLogo
-								size={32}
-								className="active:opacity-20 hover:opacity-60 transition-opacity cursor-pointer text-white"
-							/>
-							<GitFork
-								size={32}
-								weight="light"
-								className="active:opacity-20 hover:opacity-60 transition-opacity cursor-pointer text-white"
-							/>
-						</div>
-					</m.div>
-				</m.div>
-			))}
+			<m.div
+				className="flex flex-wrap w-full"
+				variants={{
+					hidden: { opacity: 1, scale: 0 },
+					visible: {
+						opacity: 1,
+						scale: 1,
+						transition: {
+							delayChildren: 0.8,
+							staggerChildren: 0.5,
+						},
+					},
+				}}
+			>
+				{projects.map((project, index) => (
+					<Card key={project.id} project={project} index={index} />
+				))}
+			</m.div>
 		</m.div>
 	);
 }
 
 const projects = [
 	{
-		id: 1,
-		title: 'Project 1',
+		id: '01',
+		title: 'Clone Netflix',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		image: 'https://source.unsplash.com/random/800x600',
-		link: 'https://www.google.com',
+			'Aplicacao feita no comeco dos meus estudos, para aprimorar meus conhecimentos de api',
+		github: 'https://github.com/HigorAln/Netflix-with-react',
+		app: 'https://myflix-one.vercel.app/',
+		image: '/images/netflix.png',
 	},
 	{
-		id: 1,
-		title: 'Project 1',
+		id: '02',
+		title: 'Projeto Pomodoro',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		image: 'https://source.unsplash.com/random/800x600',
-		link: 'https://www.google.com',
+			'Aplicacao feita com ajuda dos professor Diego Fernandes da Rocketseat. nas trilhas atualizadas de React.js',
+		app: 'https://timer-pomodoro-ashen.vercel.app/',
+		image: '/images/pomodoro.png',
 	},
 	{
-		id: 1,
-		title: 'Project 1',
+		id: '03',
+		title: 'Go Finances',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		image: 'https://source.unsplash.com/random/800x600',
-		link: 'https://www.google.com',
+			'Aplicacao em React-native feita na trilha de Ignite da Rocketseat',
+		image: '/images/gofinances.png',
+		github: 'https://github.com/HigorAln/gofinances-React-Native',
 	},
 	{
-		id: 1,
-		title: 'Project 1',
+		id: '04',
+		title: 'Go Finances',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		image: 'https://source.unsplash.com/random/800x600',
-		link: 'https://www.google.com',
+			'Aplicacao em React-native feita na trilha de Ignite da Rocketseat',
+		image: '/images/feedget.png',
+		github: 'https://github.com/HigorAln/Feedget',
+		app: 'https://feedget-6msn0waqy-higoraln.vercel.app/',
 	},
 	{
-		id: 1,
-		title: 'Project 1',
+		id: '05',
+		title: 'Dash go',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		image: 'https://source.unsplash.com/random/800x600',
-		link: 'https://www.google.com',
+			'Aplicacao em React-native feita na trilha de Ignite da Rocketseat',
+		image: '/images/dashgo.png',
+		github: 'https://github.com/HigorAln/dashgo',
+	},
+	{
+		id: '06',
+		title: 'Dashboard para processo seletivo',
+		description: 'Aplicacao feita em 2 horas para um processo seletivo.',
+		image: '/images/dashboard.png',
+		github: 'https://github.com/HigorAln/dashgo',
+	},
+	{
+		id: '07',
+		title: 'Landing page simple',
+		description:
+			'Aplicacao feita em uma tarde, a partir de um figma free da comunidade.',
+		image: '/images/landing.png',
+		github: 'https://github.com/HigorAln/landing-page',
+		app: 'https://landing-page-swart-one.vercel.app/',
+	},
+	{
+		id: '08',
+		title: 'Dt Money',
+		description:
+			'Aplicacao feita no comeco dos meus estudos na Rocketseat. aplicacao estatica usando store local.',
+		image: '/images/dtmoney.png',
+		github: 'https://github.com/HigorAln/DtMoney',
+		app: 'https://dt-money-fawn.vercel.app/',
+	},
+	{
+		id: '09',
+		title: 'Let me ask',
+		description:
+			'Aplicacao feita em um evento da Rocketseat. aplicacao com firebase.',
+		image: '/images/letmeask.png',
+		github: 'https://github.com/HigorAln/letmeask',
+	},
+	{
+		id: '10',
+		title: 'DoWhile',
+		description: 'Aplicacao construida no NWL-2021, com a rocketseat.',
+		image: '/images/nlw2021.png',
+		github: 'https://github.com/HigorAln/NLW-Front',
+	},
+	{
+		id: '11',
+		title: 'Ignews',
+		description:
+			'Aplicacao construida na Trilha Ignite - Rocketseat. utilizando Stripe.',
+		image: '/images/ignews.png',
+		github: 'https://github.com/HigorAln/ignews',
+	},
+	{
+		id: '12',
+		title: 'Other Portfolio',
+		description:
+			'Esse portfolio foi criado em pouco tempo apenas para mostrar algo nos sites de Freelancer.',
+		image: '/images/portfolio.png',
+		github: 'https://github.com/HigorAln/portfolio_freelancer',
+		app: 'https://portfolio-seven-liard-74.vercel.app/',
 	},
 ];

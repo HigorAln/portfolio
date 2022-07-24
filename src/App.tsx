@@ -1,6 +1,7 @@
 import { motion as m } from 'framer-motion';
 import { AboutMe } from './components/AboutMe';
 import { Projects } from './components/Projects';
+import { MyStack } from './components/Stacks';
 import { Welcome } from './components/Welcome';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 			<Welcome />
 			<AboutMe />
 			<Projects />
+			<MyStack />
 		</m.div>
 	);
 }

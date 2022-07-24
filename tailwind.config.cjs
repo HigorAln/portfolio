@@ -5,9 +5,10 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		fontFamily: {
-      title: ['Dancing Script'],
-      poppins: ['Poppins'],
-    }
+			title: ['Dancing Script'],
+			poppins: ['Poppins'],
+			cutive: ['Cutive Mono'],
+		},
 	},
 	plugins: [],
 };
