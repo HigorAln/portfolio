@@ -19,7 +19,6 @@ export function MyStack() {
 			.then(r => setInformation(r));
 	}, []);
 
-	console.log({ information });
 	return (
 		<m.div className="flex flex-col w-full px-5 md:px-28 overflow-hidden">
 			<m.h1
@@ -65,23 +64,71 @@ export function MyStack() {
 					</span>
 				</div>
 
-				<div>{/* TODO */}</div>
+				<div className='flex flex-col flex-1 p-5 gap-2'>
+          {stacksFrontend.map(stack => (
+            <span className='flex items-center gap-3'>
+              <m.p className='font-poppins'>{stack.name}</m.p>
+              <m.div className={`h-1 bg-green-600 rounded-md`} initial={{ width: 0}} whileInView={{ width: `${stack.quantity}%`, transition: { duration: "1"} }}/>
+              <m.p className='font-poppins'>{stack.quantity}%</m.p>
+            </span>
+          ))}
+        </div>
 			</div>
 		</m.div>
 	);
 }
 
 const stacksFrontend = [
-	'ReactJs',
-	'React Native',
-	'NextJS',
-	'Typescript',
-	'Javascript',
-	'NodeJs',
-	'Css',
-	'Sass',
-	'Html',
-	'Styled-components',
-	'Jest',
-	'MirageJS',
+	{
+    name: 'React',
+    quantity: 85,
+  },
+  {
+    name: "React Native",
+    quantity: 30,
+  },
+  {
+    name: "NextJS",
+    quantity: 95, 
+  },
+  {
+    name: "Typescript",
+    quantity: 85,
+  },
+  {
+    name: "Javascript",
+    quantity: 90,
+  },
+  {
+    name: "NodeJs",
+    quantity: 50,
+  },
+  {
+    name: "Css",
+    quantity: 90,
+  },
+  {
+    name: "Css",
+    quantity: 90,
+  },
+  {
+    name: "Html",
+    quantity: 80,
+  },
+  {
+    name: "Jest",
+    quantity: 70,
+  },
+  {
+    name: "Git",
+    quantity: 80,
+  },
+  {
+    name: "GitHub",
+    quantity: 80,
+  },
+  {
+    name: "MirageJS",
+    quantity: 30,
+  }
 ];
