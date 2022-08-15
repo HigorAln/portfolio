@@ -56,6 +56,9 @@ export function SayHello() {
                 ...inputAction.current,
                 email: true,
               };
+              setTimeout(() => {
+                document.getElementById("email")?.scrollIntoView({ behavior: "smooth" , inline: "end"})
+              }, 200)
             }
           }}
         />
@@ -69,6 +72,7 @@ export function SayHello() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              id="email"
               onChange={(e) => {
                 setInformations((c) => ({ ...c, email: e.target.value }));
 
@@ -86,6 +90,9 @@ export function SayHello() {
                   ...inputAction.current,
                   subject: true,
                 };
+                setTimeout(() => {
+                  document.getElementById("subject")?.scrollIntoView({ behavior: "smooth", inline: "end"})
+                }, 200)
               }}
             />
           </AnimatePresence>
@@ -97,6 +104,7 @@ export function SayHello() {
             placeholder="subject"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            id="subject"
             exit={{ opacity: 0 }}
             onChange={(e) => {
               setInformations((c) => ({ ...c, subject: e.target.value }));
@@ -112,6 +120,9 @@ export function SayHello() {
                 ...inputAction.current,
                 locale: true,
               };
+              setTimeout(() => {
+                document.getElementById("locale")?.scrollIntoView({ behavior: "smooth", inline: "end"})
+              }, 200)
             }}
           />
         )}
@@ -119,6 +130,7 @@ export function SayHello() {
         {inputAction.current?.locale && (
           <m.input
             type="text"
+            id="locale"
             className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl placeholder:text-sm md:placeholder:text-lg font-poppins p-4 text-gray-700 focus:outline-gray-400"
             placeholder="where are you speaking from? ex: en, fr, es, br"
             onChange={(e) => {
