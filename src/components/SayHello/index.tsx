@@ -1,5 +1,5 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import { useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 interface InputActionProps {
   name: boolean;
@@ -17,6 +17,7 @@ export function SayHello() {
     locale: "false",
     completed: false,
   });
+
   const inputAction = useRef<InputActionProps>({
     name: false,
     email: false,
@@ -25,13 +26,22 @@ export function SayHello() {
     completed: false,
   });
 
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    console.log({ informations });
+  }
+
   return (
     <m.div className="w-full mt-96 mb-24 flex flex-col justify-center items-center">
       <m.h1 className="text-2xl md:text-4xl font-poppins tracking-wider mt-5 mb-14">
         Say hello <m.span>👋</m.span>
       </m.h1>
 
-      <m.form className="flex gap-10 w-full lg:w-8/12 flex-col items-center">
+      <m.form
+        onSubmit={handleSubmit}
+        className="flex gap-10 w-full lg:w-8/12 flex-col items-center"
+      >
         <m.input
           type="text"
           className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400"
