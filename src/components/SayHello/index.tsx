@@ -102,7 +102,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
                 setTimeout(() => {
                   document
                     .getElementById("email")
-                    ?.scrollIntoView({ behavior: "smooth", inline: "center" });
+                    ?.scrollIntoView({ behavior: "smooth", block: "center" });
                 }, 200);
               }
             }}
@@ -138,7 +138,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
                   setTimeout(() => {
                     document.getElementById("subject")?.scrollIntoView({
                       behavior: "smooth",
-                      inline: "center",
+                      block: "center",
                     });
                   }, 200);
                 }}
@@ -171,7 +171,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
                 setTimeout(() => {
                   document
                     .getElementById("locale")
-                    ?.scrollIntoView({ behavior: "smooth", inline: "center" });
+                    ?.scrollIntoView({ behavior: "smooth", block: "center" });
                 }, 200);
               }}
             />
