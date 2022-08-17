@@ -1,4 +1,3 @@
-import { useScroll } from "framer-motion";
 import { motion as m } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -7,10 +6,6 @@ export function AboutMe() {
   const windows = useRef(400);
   const [_, render] = useState({});
   const forceUpdated = useCallback(() => render({}), []);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
 
   useEffect(() => {
     windows.current = window.innerWidth;
