@@ -15,7 +15,7 @@ export function Projects() {
       </m.h1>
 
       <m.div
-        className="flex flex-wrap w-full gap-2 sm:gap-0"
+        className="flex flex-wrap w-full gap-2 sm:gap-1"
         variants={{
           hidden: { opacity: 1, scale: 0 },
           visible: {
@@ -134,5 +134,14 @@ const projects = [
     image: "/images/portfolio.png",
     github: "https://github.com/HigorAln/portfolio_freelancer",
     app: "https://portfolio-seven-liard-74.vercel.app/",
+  },
+  {
+    id: "13",
+    title: "Plataforma de eventos",
+    description:
+      "Plataforma de streaming de videos, feito como plataforma de aulas, onde existem relacionamento entre aulas, professores, desafios e entre outros.",
+    image: "/images/eventPlataform.png",
+    github: "https://github.com/HigorAln/Event-plataform",
+    app: "https://event-plataform-seven-ochre.vercel.app/",
   },
 ];
