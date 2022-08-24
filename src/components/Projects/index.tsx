@@ -144,4 +144,12 @@ const projects = [
     github: "https://github.com/HigorAln/Event-plataform",
     app: "https://event-plataform-seven-ochre.vercel.app/",
   },
+  {
+    id: "14",
+    title: "Dt Money 2022",
+    description:
+      "Aplicativo de financas para que voce possa controlar suas dispesas.",
+    image: "/images/dtmoney2022.png",
+    github: "https://github.com/HigorAln/new-dt-money-2022",
+  },
 ];
