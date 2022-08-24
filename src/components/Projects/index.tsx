@@ -148,7 +148,7 @@ const projects = [
     id: "14",
     title: "Dt Money 2022",
     description:
-      "Aplicativo de financas para que voce possa controlar suas dispesas.",
+      "Aplicativo de finanças para você poder controlar suas despesas.",
     image: "/images/dtmoney2022.png",
     github: "https://github.com/HigorAln/new-dt-money-2022",
   },
