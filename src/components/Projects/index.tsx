@@ -17,16 +17,17 @@ export function Projects() {
       <m.div
         className="flex flex-wrap w-full gap-2 sm:gap-1"
         variants={{
-          hidden: { opacity: 1, scale: 0 },
-          visible: {
+          hidden: { opacity: 0 },
+          show: {
             opacity: 1,
-            scale: 1,
             transition: {
-              delayChildren: 0.8,
-              staggerChildren: 0.5,
+              delayChildren: 0.7,
+              staggerChildren: 0.2,
             },
           },
         }}
+        initial="hidden"
+        whileInView="show"
       >
         {projects.map((project, index) => (
           <Card key={project.id} project={project} index={index} />

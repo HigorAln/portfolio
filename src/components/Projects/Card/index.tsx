@@ -19,9 +19,7 @@ export function Card({ project, index }: Props) {
     <LayoutGroup>
       <m.div
         className="group min-w-[300px] flex-1 min-h-[300px] relative"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, transition: { delay: index * 0.2 } }}
-        viewport={{ once: true }}
+        variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
       >
         <div className="absolute w-full h-full overflow-hidden z-0">
           <m.div
