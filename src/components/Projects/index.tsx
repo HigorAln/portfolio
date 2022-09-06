@@ -81,7 +81,7 @@ const projects = [
   {
     id: "06",
     title: "Dashboard para processo seletivo",
-    description: "Aplicacao feita em 2 horas para um processo seletivo.",
+    description: "Aplicação feita em 2 horas para um processo seletivo.",
     image: "/images/dashboard.png",
     github: "https://github.com/HigorAln/dashgo",
   },
@@ -89,7 +89,7 @@ const projects = [
     id: "07",
     title: "Landing page simple",
     description:
-      "Aplicacao feita em uma tarde, a partir de um figma free da comunidade.",
+      "Aplicação feita em uma tarde, a partir de um figma free da comunidade.",
     image: "/images/landing.png",
     github: "https://github.com/HigorAln/landing-page",
     app: "https://landing-page-swart-one.vercel.app/",
@@ -98,7 +98,7 @@ const projects = [
     id: "08",
     title: "Dt Money",
     description:
-      "Aplicacao feita no comeco dos meus estudos na Rocketseat. aplicacao estatica usando store local.",
+      "Aplicação feita no comeco dos meus estudos na Rocketseat. Aplicação estatica usando store local.",
     image: "/images/dtmoney.png",
     github: "https://github.com/HigorAln/DtMoney",
     app: "https://dt-money-fawn.vercel.app/",
@@ -107,14 +107,14 @@ const projects = [
     id: "09",
     title: "Let me ask",
     description:
-      "Aplicacao feita em um evento da Rocketseat. aplicacao com firebase.",
+      "Aplicação feita em um evento da Rocketseat. Aplicação com firebase.",
     image: "/images/letmeask.png",
     github: "https://github.com/HigorAln/letmeask",
   },
   {
     id: "10",
     title: "DoWhile",
-    description: "Aplicacao construida no NWL-2021, com a rocketseat.",
+    description: "Aplicação construida no NWL-2021, com a rocketseat.",
     image: "/images/nlw2021.png",
     github: "https://github.com/HigorAln/NLW-Front",
   },
@@ -122,7 +122,7 @@ const projects = [
     id: "11",
     title: "Ignews",
     description:
-      "Aplicacao construida na Trilha Ignite - Rocketseat. utilizando Stripe.",
+      "Aplicação construida na Trilha Ignite - Rocketseat. utilizando Stripe.",
     image: "/images/ignews.png",
     github: "https://github.com/HigorAln/ignews",
   },
@@ -146,6 +146,23 @@ const projects = [
   },
   {
     id: "14",
+    title: "Cadastro de convidados",
+    description:
+      "Aplicação construída como freela, onde por link o User seria cadastrado na plataforma, e apos o cadastro iria ser direcionado para baixar o aplicativo.",
+    image: "/images/freelaInvite.png",
+    github: "https://github.com/HigorAln/freela_invite",
+    app: "https://freela-invite.vercel.app/",
+  },
+  {
+    id: "15",
+    title: "Clone Twitter",
+    description:
+      "Plataforma construida sozinho para treinamento em tailwindcss.",
+    image: "/images/twitter.png",
+    github: "https://github.com/HigorAln/Clone-twitter-interface",
+  },
+  {
+    id: "16",
     title: "Dt Money 2022",
     description:
       "Aplicativo de finanças para você poder controlar suas despesas.",
