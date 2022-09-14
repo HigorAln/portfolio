@@ -47,29 +47,33 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
       return;
     }
 
-    try {
-      await api.post("/create", {
-        name,
-        email,
-        subject,
-        locale,
-      });
+    document
+      ?.getElementById("home")
+      ?.scrollIntoView({ behavior: "smooth", inline: "start" });
+    setMessageIsSend(true);
+    // try {
+    //   await api.post("/create", {
+    //     name,
+    //     email,
+    //     subject,
+    //     locale,
+    //   });
 
-      document
-        ?.getElementById("home")
-        ?.scrollIntoView({ behavior: "smooth", inline: "start" });
+    //   document
+    //     ?.getElementById("home")
+    //     ?.scrollIntoView({ behavior: "smooth", inline: "start" });
 
-      setMessageIsSend(true);
-      inputAction.current = {
-        name: true,
-        email: false,
-        subject: false,
-        locale: false,
-        completed: false,
-      };
-    } catch (err) {
-      console.log(err);
-    }
+    //   setMessageIsSend(true);
+    //   inputAction.current = {
+    //     name: true,
+    //     email: false,
+    //     subject: false,
+    //     locale: false,
+    //     completed: false,
+    //   };
+    // } catch (err) {
+    //   console.log(err);
+    // }
   }
 
   return (
