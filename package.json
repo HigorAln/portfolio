@@ -7,11 +7,18 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "codegen": "graphql-codegen"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "@graphql-codegen/cli": "^2.12.0",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.3",
     "axios": "^0.27.2",
     "framer-motion": "^6.5.1",
+    "graphql": "^16.6.0",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
