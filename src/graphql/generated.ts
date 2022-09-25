@@ -4995,12 +4995,72 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
+export type GetProjectBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type GetProjectBySlugQuery = { __typename?: 'Query', project?: { __typename?: 'Project', title: string, slug: string, url_github?: string | null, url_website?: string | null, description?: string | null, banner?: { __typename?: 'Asset', url: string } | null, tecnologies: Array<{ __typename?: 'Tecnologies', id: string, name?: string | null, image?: { __typename?: 'Asset', id: string, url: string } | null }>, galeries: Array<{ __typename?: 'Galery', id: string }> } | null };
+
 export type GetProjectsSimpleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetProjectsSimpleQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', id: string, title: string, slug: string, banner?: { __typename?: 'Asset', id: string, url: string } | null }> };
 
 
+export const GetProjectBySlugDocument = gql`
+    query GetProjectBySlug($slug: String!) {
+  project(where: {slug: $slug}) {
+    title
+    banner {
+      url
+    }
+    tecnologies {
+      id
+      name
+      image {
+        id
+        url
+      }
+    }
+    galeries {
+      id
+    }
+    slug
+    url_github
+    url_website
+    description
+  }
+}
+    `;
+
+/**
+ * __useGetProjectBySlugQuery__
+ *
+ * To run a query within a React component, call `useGetProjectBySlugQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetProjectBySlugQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetProjectBySlugQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useGetProjectBySlugQuery(baseOptions: Apollo.QueryHookOptions<GetProjectBySlugQuery, GetProjectBySlugQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetProjectBySlugQuery, GetProjectBySlugQueryVariables>(GetProjectBySlugDocument, options);
+      }
+export function useGetProjectBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetProjectBySlugQuery, GetProjectBySlugQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetProjectBySlugQuery, GetProjectBySlugQueryVariables>(GetProjectBySlugDocument, options);
+        }
+export type GetProjectBySlugQueryHookResult = ReturnType<typeof useGetProjectBySlugQuery>;
+export type GetProjectBySlugLazyQueryHookResult = ReturnType<typeof useGetProjectBySlugLazyQuery>;
+export type GetProjectBySlugQueryResult = Apollo.QueryResult<GetProjectBySlugQuery, GetProjectBySlugQueryVariables>;
 export const GetProjectsSimpleDocument = gql`
     query GetProjectsSimple {
   projects(first: 50) {

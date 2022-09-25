@@ -13,7 +13,7 @@ export function Projects() {
   if (error) return null;
 
   return (
-    <m.div className="flex flex-col w-full px-5 md:px-28">
+    <m.div className="flex flex-col w-full px-5 md:px-28" id="projects">
       <m.h1
         className="text-5xl md:text-7xl mb-8 md:mb-24 text-gray-900 tracking-widest"
         initial={{ opacity: 0, x: -200 }}
@@ -38,6 +38,7 @@ export function Projects() {
         }}
         initial="hidden"
         whileInView="show"
+        viewport={{ once: true }}
       >
         {data?.projects.map((project, index: number) => (
           <Card key={project.id} project={project} index={index} />
