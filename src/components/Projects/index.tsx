@@ -1,8 +1,17 @@
+import { gql, useQuery } from "@apollo/client";
 import { motion as m } from "framer-motion";
+import {
+  GetProjectsSimpleQuery,
+  useGetProjectsSimpleQuery,
+} from "../../graphql/generated";
 import { projects } from "../../utils/projects";
 import { Card } from "./Card";
 
 export function Projects() {
+  const { data, error } = useGetProjectsSimpleQuery();
+
+  if (error) return null;
+
   return (
     <m.div className="flex flex-col w-full px-5 md:px-28">
       <m.h1
@@ -30,7 +39,7 @@ export function Projects() {
         initial="hidden"
         whileInView="show"
       >
-        {projects.map((project, index) => (
+        {data?.projects.map((project, index: number) => (
           <Card key={project.id} project={project} index={index} />
         ))}
       </m.div>

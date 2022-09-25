@@ -35,13 +35,10 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
     completed: false,
   });
 
-  console.log({ width, height });
-
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     const { name, email, subject, locale } = informations;
-    console.log({ name, email, subject, locale });
 
     if (!name || !email || !subject || !locale) {
       return;

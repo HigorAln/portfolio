@@ -1,30 +1,42 @@
 import { LayoutGroup, motion as m } from "framer-motion";
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  github?: string;
-  app?: string;
-  image: string;
-}
+import { useNavigate } from "react-router-dom";
+import { GetProjectsSimpleQuery } from "../../../graphql/generated";
 
 interface Props {
-  project: Project;
+  project: {
+    __typename?: "Project" | undefined;
+    id: string;
+    title: string;
+    slug: string;
+    banner?:
+      | {
+          __typename?: "Asset" | undefined;
+          id: string;
+          url: string;
+        }
+      | null
+      | undefined;
+  };
   index: number;
 }
 
 export function Card({ project, index }: Props) {
+  const navigate = useNavigate();
+
+  function handleRedirect(slug: string) {
+    navigate(`/projects/${slug}`);
+  }
   return (
     <LayoutGroup>
-      <m.div
+      <m.button
         className="group min-w-[300px] flex-1 min-h-[300px] relative"
         variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+        onClick={() => handleRedirect(project.slug)}
       >
         <div className="absolute w-full h-full overflow-hidden z-0">
           <m.div
             style={{
-              backgroundImage: `url('${project.image}')`,
+              backgroundImage: `url('${project.banner?.url}')`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -51,19 +63,19 @@ export function Card({ project, index }: Props) {
           className="absolute opacity-0 group-hover:opacity-100 -top-6 -left-6 text-black font-bold text-7xl z-10 transition font-cutive delay-100"
           style={{ textShadow: "0px 0px 10px #fff" }}
         >
-          {project.id}
+          {index + 1}
         </m.h1>
 
         <m.div className="w-full h-full flex flex-col z-10 justify-center gap-3 px-5">
           <m.h1 className="text-black opacity-100 font-poppins text-2xl">
             {project.title}
           </m.h1>
-          <m.p className="text-black opacity-100 font-poppins text-sm underline">
+          {/* <m.p className="text-black opacity-100 font-poppins text-sm underline">
             {project.description}
-          </m.p>
+          </m.p> */}
         </m.div>
 
-        <div className="absolute opacity-0 group-hover:opacity-100 delay-500 transition-all bottom-0 right-0 flex items-center justify-end gap-5 mr-5 mb-3">
+        {/* <div className="absolute opacity-0 group-hover:opacity-100 delay-500 transition-all bottom-0 right-0 flex items-center justify-end gap-5 mr-5 mb-3">
           {project.github && (
             <a href={project.github} target={"_blank"} rel="noreferrer">
               <m.svg
@@ -117,8 +129,8 @@ export function Card({ project, index }: Props) {
               </svg>
             </a>
           )}
-        </div>
-      </m.div>
+        </div> */}
+      </m.button>
     </LayoutGroup>
   );
 }
