@@ -18,6 +18,8 @@ query GetProjectBySlug($slug: String!)  {
     slug
     url_github
     url_website
-    description
+    description {
+      html
+    }
   }
 }

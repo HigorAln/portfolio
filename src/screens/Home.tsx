@@ -21,12 +21,7 @@ export function Home() {
   }, []);
 
   return (
-    <m.div
-      className="overflow-x-hidden bg-white"
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // exit={{ translateX: -5000 }}
-    >
+    <m.div className="overflow-x-hidden bg-white">
       <Welcome
         messageIsSend={messageIsSend}
         setMessageIsSend={setMessageIsSend}

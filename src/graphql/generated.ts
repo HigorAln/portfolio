@@ -2066,7 +2066,7 @@ export type Project = Node & {
   createdAt: Scalars['DateTime'];
   /** User that created this document */
   createdBy?: Maybe<User>;
-  description?: Maybe<Scalars['String']>;
+  description?: Maybe<RichText>;
   /** Get the document in other stages */
   documentInStages: Array<Project>;
   galeries: Array<Galery>;
@@ -2181,7 +2181,7 @@ export type ProjectConnection = {
 export type ProjectCreateInput = {
   banner?: InputMaybe<AssetCreateOneInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
-  description?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['RichTextAST']>;
   galeries?: InputMaybe<GaleryCreateManyInlineInput>;
   slug: Scalars['String'];
   tecnologies?: InputMaybe<TecnologiesCreateManyInlineInput>;
@@ -2241,25 +2241,6 @@ export type ProjectManyWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
   createdBy?: InputMaybe<UserWhereInput>;
-  description?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  description_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  description_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values that are not equal to given value. */
-  description_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  description_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  description_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values not starting with the given string. */
-  description_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  description_starts_with?: InputMaybe<Scalars['String']>;
   documentInStages_every?: InputMaybe<ProjectWhereStageInput>;
   documentInStages_none?: InputMaybe<ProjectWhereStageInput>;
   documentInStages_some?: InputMaybe<ProjectWhereStageInput>;
@@ -2404,8 +2385,6 @@ export type ProjectManyWhereInput = {
 export enum ProjectOrderByInput {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
@@ -2424,7 +2403,7 @@ export enum ProjectOrderByInput {
 
 export type ProjectUpdateInput = {
   banner?: InputMaybe<AssetUpdateOneInlineInput>;
-  description?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['RichTextAST']>;
   galeries?: InputMaybe<GaleryUpdateManyInlineInput>;
   slug?: InputMaybe<Scalars['String']>;
   tecnologies?: InputMaybe<TecnologiesUpdateManyInlineInput>;
@@ -2451,7 +2430,7 @@ export type ProjectUpdateManyInlineInput = {
 };
 
 export type ProjectUpdateManyInput = {
-  description?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['RichTextAST']>;
   title?: InputMaybe<Scalars['String']>;
   url_github?: InputMaybe<Scalars['String']>;
   url_website?: InputMaybe<Scalars['String']>;
@@ -2533,25 +2512,6 @@ export type ProjectWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
   createdBy?: InputMaybe<UserWhereInput>;
-  description?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  description_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  description_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values that are not equal to given value. */
-  description_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  description_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  description_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values not starting with the given string. */
-  description_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  description_starts_with?: InputMaybe<Scalars['String']>;
   documentInStages_every?: InputMaybe<ProjectWhereStageInput>;
   documentInStages_none?: InputMaybe<ProjectWhereStageInput>;
   documentInStages_some?: InputMaybe<ProjectWhereStageInput>;
@@ -5000,7 +4960,7 @@ export type GetProjectBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectBySlugQuery = { __typename?: 'Query', project?: { __typename?: 'Project', title: string, slug: string, url_github?: string | null, url_website?: string | null, description?: string | null, banner?: { __typename?: 'Asset', url: string } | null, tecnologies: Array<{ __typename?: 'Tecnologies', id: string, name?: string | null, image?: { __typename?: 'Asset', id: string, url: string } | null }>, galeries: Array<{ __typename?: 'Galery', id: string }> } | null };
+export type GetProjectBySlugQuery = { __typename?: 'Query', project?: { __typename?: 'Project', title: string, slug: string, url_github?: string | null, url_website?: string | null, banner?: { __typename?: 'Asset', url: string } | null, tecnologies: Array<{ __typename?: 'Tecnologies', id: string, name?: string | null, image?: { __typename?: 'Asset', id: string, url: string } | null }>, galeries: Array<{ __typename?: 'Galery', id: string }>, description?: { __typename?: 'RichText', html: string } | null } | null };
 
 export type GetProjectsSimpleQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5029,7 +4989,9 @@ export const GetProjectBySlugDocument = gql`
     slug
     url_github
     url_website
-    description
+    description {
+      html
+    }
   }
 }
     `;

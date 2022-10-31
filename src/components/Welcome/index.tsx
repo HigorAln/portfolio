@@ -14,6 +14,7 @@ export function Welcome({ messageIsSend, setMessageIsSend }: Props) {
       }, 6000);
     }
   }, [messageIsSend]);
+
   return (
     <m.div
       id="home"
@@ -62,47 +63,8 @@ export function Welcome({ messageIsSend, setMessageIsSend }: Props) {
           >
             Mensagem enviada!
           </m.h1>
-          {/* <m.h2
-            className="font-poppins text-xl md:text-2xl mt-4 text-center w-[80%]"
-            layout
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-              transition: { delay: 0.5 },
-            }}
-          >
-            Front-end Developer & Ethical Hacking ❤️
-          </m.h2> */}
         </AnimatePresence>
       )}
-
-      {/* <m.button
-				className="absolute top-[90%]"
-				initial={{ opacity: 0, x: '30vw' }}
-				layout
-				animate={{
-					opacity: 1,
-					x: 0,
-					transition: { delay: 0.8 },
-				}}
-			>
-				<m.div
-					initial={{ scale: 0.9 }}
-					layout
-					animate={{
-						scale: 1,
-						transition: {
-							delay: 1,
-							duration: 1,
-							ease: 'ease',
-							repeat: Infinity,
-						},
-					}}
-				>
-					<CaretDown size={32} />
-				</m.div>
-			</m.button> */}
     </m.div>
   );
 }

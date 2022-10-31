@@ -29,6 +29,7 @@ export function Card({ project, index }: Props) {
   return (
     <LayoutGroup>
       <m.button
+        type="button"
         className="group min-w-[300px] flex-1 min-h-[300px] relative"
         variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
         onClick={() => handleRedirect(project.slug)}
