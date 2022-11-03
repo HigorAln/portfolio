@@ -47,16 +47,18 @@ export function MyStack() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, transition: { delay: 0.2 } }}
           >
-            <span className="p-3 text-sm rounded-lg shadow-md sm:text-md">
-              Following {information?.following}
-            </span>
-            <span className="p-3 rounded-lg shadow-md">
+            <span className="p-3 text-sm rounded-lg shadow-md sm:text-md select-none">
               Followers {information?.followers}
+            </span>
+            <span className="p-3 text-sm rounded-lg shadow-md sm:text-md select-none">
+              Following {information?.following}
             </span>
 
             <a
               href={information?.html_url}
               className="flex gap-3 p-3 rounded-lg shadow-md"
+              target={"_blank"}
+              rel="noreferrer"
             >
               <p>higoraln</p>
               <m.svg

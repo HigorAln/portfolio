@@ -1,0 +1,11 @@
+query GetProjectsSimple {
+  projects(first: 50) {
+    id
+    title
+    slug
+    banner {
+      id
+      url
+    }
+  }
+}
