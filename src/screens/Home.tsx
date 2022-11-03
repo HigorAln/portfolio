@@ -8,6 +8,7 @@ import { Welcome } from "../components/Welcome";
 
 import { motion as m } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { ButtonOtherPortfolio } from "../components/ButtonOtherPortfolio";
 
 export function Home() {
   const [messageIsSend, setMessageIsSend] = useState(false);
@@ -34,6 +35,8 @@ export function Home() {
         messageIsSend={messageIsSend}
       />
       <Footer />
+
+      <ButtonOtherPortfolio />
     </m.div>
   );
 }

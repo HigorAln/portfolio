@@ -4,11 +4,12 @@ import { ReactNode } from "react";
 interface Props {
   children: ReactNode;
   content: string;
+  duration?: number;
 }
 
-export function Tooltip({ children, content }: Props) {
+export function Tooltip({ children, content, duration = 300 }: Props) {
   return (
-    <TooltipRadix.Provider delayDuration={300}>
+    <TooltipRadix.Provider delayDuration={duration}>
       <TooltipRadix.Root>
         <TooltipRadix.Trigger>{children}</TooltipRadix.Trigger>
         <TooltipRadix.Portal>
