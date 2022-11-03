@@ -60,7 +60,7 @@ export function MyStack() {
               target={"_blank"}
               rel="noreferrer"
             >
-              <p>higoraln</p>
+              <p>Github</p>
               <m.svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
