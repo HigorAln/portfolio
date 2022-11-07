@@ -18,7 +18,7 @@ export function AboutMe() {
       ref={ref}
     >
       <m.h1
-        className={`font-poppins tracking-widest text-3xl sm:text-7xl md:text-8xl 2xl:text-[160px] font-bold text-gray-100 absolute left-0 z-0`}
+        className={`font-poppins tracking-widest text-3xl sm:text-7xl md:text-8xl 2xl:text-[160px] font-bold text-gray-100 dark:text-style-g-e6 absolute left-0 z-0`}
         layout
         initial={{ x: 0 }}
         whileInView={{
@@ -36,7 +36,7 @@ export function AboutMe() {
       >
         About me
       </m.h1>
-      <m.h1 className="font-poppins font-light text-md md:text-xl lg:text-2xl text-center md:text-left w-4/5 max-w-5xl z-10 xl:ml-[450px]">
+      <m.h1 className="font-poppins font-light text-md md:text-xl lg:text-2xl text-center md:text-left w-4/5 max-w-5xl z-10 xl:ml-[450px] dark:text-style-w">
         Front-end developer who cares deeply about user experience and security.
         <br />
         Always concerned about data protection.

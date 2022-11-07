@@ -1,5 +1,7 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import { useEffect } from "react";
+import { Moon, Sun } from "phosphor-react";
+import React, { useEffect } from "react";
+import { useTheme } from "../../context/useTheme";
 
 interface Props {
   setMessageIsSend: (value: boolean) => void;
@@ -7,6 +9,9 @@ interface Props {
 }
 
 export function Welcome({ messageIsSend, setMessageIsSend }: Props) {
+  const { forceRender } = useTheme();
+  const [theme, setTheme] = React.useState<"light" | "dark">("light");
+
   useEffect(() => {
     if (messageIsSend) {
       setTimeout(() => {
@@ -15,15 +20,24 @@ export function Welcome({ messageIsSend, setMessageIsSend }: Props) {
     }
   }, [messageIsSend]);
 
+  React.useEffect(() => {
+    if (theme === "light") {
+      localStorage.theme = "light";
+    } else {
+      localStorage.theme = "dark";
+    }
+    forceRender();
+  }, [theme]);
+
   return (
     <m.div
       id="home"
-      className="w-screen h-screen flex flex-col items-center justify-center"
+      className="w-screen h-screen flex flex-col items-center justify-center relative"
     >
       {!messageIsSend ? (
         <AnimatePresence>
           <m.h1
-            className="text-6xl md:text-7xl 2xl:text-9xl font-title"
+            className="text-6xl md:text-7xl 2xl:text-9xl font-title dark:text-style-g-ed"
             initial={{ opacity: 0, y: 20 }}
             layout
             animate={{
@@ -36,7 +50,7 @@ export function Welcome({ messageIsSend, setMessageIsSend }: Props) {
             Higor Allan
           </m.h1>
           <m.h2
-            className="font-poppins text-xl md:text-2xl mt-4 text-center w-[80%]"
+            className="font-poppins text-xl md:text-2xl mt-4 text-center w-[80%] dark:text-style-g-ed"
             layout
             initial={{ opacity: 0, x: 20 }}
             whileInView={{

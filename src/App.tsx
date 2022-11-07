@@ -1,7 +1,13 @@
+import React from "react";
+import { ThemeProvider } from "./context/useTheme";
 import { Router } from "./router";
 
 function App() {
-  return <Router />;
+  return (
+    <ThemeProvider>
+      <Router />
+    </ThemeProvider>
+  );
 }
 
 export default App;

@@ -15,7 +15,7 @@ export function Projects() {
   return (
     <m.div className="flex flex-col w-full px-5 md:px-28" id="projects">
       <m.h1
-        className="text-5xl md:text-7xl mb-8 md:mb-24 text-gray-900 tracking-widest"
+        className="text-5xl md:text-7xl mb-8 md:mb-24 text-gray-900 dark:text-style-g-ed tracking-widest"
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0, transition: { delay: 0.5 } }}
         viewport={{ once: true }}
