@@ -6,7 +6,7 @@ export function ButtonOtherPortfolio() {
   return (
     <AnimatePresence>
       <div className="fixed bottom-8 right-8 z-50 flex items-end gap-2">
-        <Tooltip duration={100} content="See a simpler version">
+        <Tooltip duration={100} content="see the simplest version">
           <a
             href="https://portfolio-v2-orcin-nu.vercel.app/"
             target={"_blank"}
