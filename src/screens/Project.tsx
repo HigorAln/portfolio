@@ -29,7 +29,7 @@ export function Project() {
         <span className="max-w-7xl w-full">
           <Link to="/">
             <button className="max-w-7xl mt-10 mb-5 ml-10 xl:ml-0 hover:opacity-50 transition-opacity">
-              <ArrowLeft size={26} />
+              <ArrowLeft size={26} className="dark:text-style-g-ed"/>
             </button>
           </Link>
         </span>
@@ -47,7 +47,7 @@ export function Project() {
         />
 
         <span className="flex justify-between max-w-7xl w-full px-7 2xl:px-0">
-          <m.h1 className="text-3xl  md:text-5xl 2xl:text-7xl mt-10 text-gray-900">
+          <m.h1 className="text-3xl md:text-5xl 2xl:text-7xl mt-10 text-gray-900 dark:text-style-g-ed">
             {data?.project?.title}
           </m.h1>
 
@@ -97,7 +97,7 @@ export function Project() {
 
         <span className="flex w-full max-w-7xl mt-20 pb-20">
           <span
-            className="text-lg px-10 2xl:px-0"
+            className="text-lg px-10 2xl:px-0 dark:text-style-g-ed"
             dangerouslySetInnerHTML={{
               __html:
                 data?.project?.description?.html.replace(
