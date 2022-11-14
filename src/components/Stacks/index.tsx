@@ -21,7 +21,10 @@ export function MyStack() {
   }, []);
 
   return (
-    <m.div className="flex flex-col w-full px-5 md:px-28 overflow-hidden">
+    <m.div
+      className="z-10 flex flex-col w-full px-5 md:px-28 overflow-hidden"
+      id="stacks"
+    >
       <m.h1
         className="text-5xl md:text-7xl mb-8 mt-32 md:mb-24 text-gray-900 dark:text-style-g-ed tracking-widest"
         initial={{ opacity: 0, x: -200 }}

@@ -1,10 +1,8 @@
-import { gql, useQuery } from "@apollo/client";
 import { motion as m } from "framer-motion";
 import {
   GetProjectsSimpleQuery,
   useGetProjectsSimpleQuery,
 } from "../../graphql/generated";
-import { projects } from "../../utils/projects";
 import { Card } from "./Card";
 
 export function Projects() {
@@ -13,13 +11,14 @@ export function Projects() {
   if (error) return null;
 
   return (
-    <m.div className="flex flex-col w-full px-5 md:px-28" id="projects">
+    <m.div className="z-10 flex flex-col w-full px-5 md:px-28">
       <m.h1
-        className="text-5xl md:text-7xl mb-8 md:mb-24 text-gray-900 dark:text-style-g-ed tracking-widest"
+        className="text-5xl md:text-7xl mb-8 md:mb-24 text-gray-900 dark:text-style-g-ed tracking-widest pt-20"
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0, transition: { delay: 0.5 } }}
         viewport={{ once: true }}
         layout
+        id="studies"
       >
         some studies:
       </m.h1>

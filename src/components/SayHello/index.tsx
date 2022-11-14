@@ -2,7 +2,6 @@ import { AnimatePresence, motion as m } from "framer-motion";
 import { FormEvent, useRef, useState } from "react";
 import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
-import { api } from "../../utils/axios";
 
 interface InputActionProps {
   name: boolean;
@@ -74,7 +73,10 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
   }
 
   return (
-    <m.div className="w-full mt-96 mb-24 flex flex-col justify-center items-center">
+    <m.div
+      className="z-10 w-full mt-96 mb-24 flex flex-col justify-center items-center"
+      id="sayhello"
+    >
       <m.h1 className="text-2xl md:text-4xl font-poppins tracking-wider mt-5 mb-14 dark:text-style-g-ed">
         Say hello <m.span>👋</m.span>
       </m.h1>

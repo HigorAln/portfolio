@@ -1,38 +1,15 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import { Moon, Sun } from "phosphor-react";
-import React, { useEffect } from "react";
-import { useTheme } from "../../context/useTheme";
 
 interface Props {
   setMessageIsSend: (value: boolean) => void;
   messageIsSend: boolean;
 }
 
-export function Welcome({ messageIsSend, setMessageIsSend }: Props) {
-  const { forceRender } = useTheme();
-  const [theme, setTheme] = React.useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    if (messageIsSend) {
-      setTimeout(() => {
-        setMessageIsSend(false);
-      }, 6000);
-    }
-  }, [messageIsSend]);
-
-  React.useEffect(() => {
-    if (theme === "light") {
-      localStorage.theme = "light";
-    } else {
-      localStorage.theme = "dark";
-    }
-    forceRender();
-  }, [theme]);
-
+export function Welcome({ messageIsSend }: Props) {
   return (
     <m.div
       id="home"
-      className="w-screen h-screen flex flex-col items-center justify-center relative"
+      className="z-10 w-screen h-[calc(100vh-4rem)] pt-4 flex flex-col items-center justify-center relative"
     >
       {!messageIsSend ? (
         <AnimatePresence>

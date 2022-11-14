@@ -14,8 +14,9 @@ export function AboutMe() {
 
   return (
     <m.div
-      className="w-screen h-[60vh] mb-60 flex flex-col items-center justify-center relative"
+      className="z-10 w-screen h-[60vh] mb-40 flex flex-col items-center justify-center relative"
       ref={ref}
+      id="about"
     >
       <m.h1
         className={`font-poppins tracking-widest text-3xl sm:text-7xl md:text-8xl 2xl:text-[160px] font-bold text-gray-100 dark:text-style-g-e6 absolute left-0 z-0`}
