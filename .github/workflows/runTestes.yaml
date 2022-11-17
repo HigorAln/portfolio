@@ -1,0 +1,23 @@
+yaml
+name: Running tests
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+    uses: actions/checkout@v2
+    - name: Use Nodejs
+    uses: actions/setup-node@v1
+    with:
+      node-versions: "16.x"
+    - name: Run yan
+    run: yarn
+    - name: Run testes
+    run yarn test
