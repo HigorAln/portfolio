@@ -1,4 +1,3 @@
-yaml
 name: Running tests
 on:
   push:
