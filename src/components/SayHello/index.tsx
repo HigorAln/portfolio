@@ -2,7 +2,6 @@ import { AnimatePresence, motion as m } from "framer-motion";
 import { FormEvent, useRef, useState } from "react";
 import Confetti from "react-confetti";
 import useWindowSize from "react-use/lib/useWindowSize";
-import { api } from "../../utils/axios";
 
 interface InputActionProps {
   name: boolean;
@@ -74,8 +73,11 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
   }
 
   return (
-    <m.div className="w-full mt-96 mb-24 flex flex-col justify-center items-center">
-      <m.h1 className="text-2xl md:text-4xl font-poppins tracking-wider mt-5 mb-14">
+    <m.div
+      className="z-10 w-full mt-96 mb-24 flex flex-col justify-center items-center"
+      id="sayhello"
+    >
+      <m.h1 className="text-2xl md:text-4xl font-poppins tracking-wider mt-5 mb-14 dark:text-style-g-ed">
         Say hello <m.span>👋</m.span>
       </m.h1>
 
@@ -88,7 +90,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
         >
           <m.input
             type="text"
-            className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400"
+            className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400 dark:bg-transparent dark:text-style-w"
             placeholder="your name"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -113,7 +115,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
             <AnimatePresence>
               <m.input
                 type="email"
-                className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400"
+                className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400 dark:bg-transparent dark:text-style-w"
                 placeholder="your email"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -149,7 +151,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
 
           {inputAction.current?.subject && (
             <m.textarea
-              className="border-b-2 w-5/6 md:w-4/6 max-h-96 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400"
+              className="border-b-2 w-5/6 md:w-4/6 max-h-96 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400 dark:bg-transparent dark:text-style-w"
               placeholder="subject"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -182,7 +184,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
             <m.input
               type="text"
               id="locale"
-              className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl placeholder:text-sm md:placeholder:text-lg font-poppins p-4 text-gray-700 focus:outline-gray-400"
+              className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl placeholder:text-sm md:placeholder:text-lg font-poppins p-4 text-gray-700 focus:outline-gray-400 dark:bg-transparent dark:text-style-w"
               placeholder="where are you speaking from? ex: en, fr, es, br"
               onChange={(e) => {
                 setInformations((c) => ({ ...c, locale: e.target.value }));
@@ -200,7 +202,7 @@ export function SayHello({ setMessageIsSend, messageIsSend }: Props) {
 
           {inputAction.current?.completed && (
             <m.button
-              className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl font-poppins p-4 text-gray-700 focus:outline-gray-400 hover:bg-gray-200 transition-colors"
+              className="border-b-2 w-5/6 md:w-4/6 text-lg md:text-2xl font-poppins p-4 text-gray-700 dark:text-style-g-ed focus:outline-gray-400 hover:bg-gray-200 transition-colors"
               type="submit"
             >
               Send

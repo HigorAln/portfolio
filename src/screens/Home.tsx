@@ -8,7 +8,8 @@ import { Welcome } from "../components/Welcome";
 
 import { motion as m } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import { ButtonOtherPortfolio } from "../components/ButtonOtherPortfolio";
+import { Header } from "../components/Header";
+import { Contact } from "../components/Contact";
 
 export function Home() {
   const [messageIsSend, setMessageIsSend] = useState(false);
@@ -22,7 +23,8 @@ export function Home() {
   }, []);
 
   return (
-    <m.div className="overflow-x-hidden bg-white">
+    <m.div className="overflow-x-hidden relativ scroll-smooth">
+      <Header />
       <Welcome
         messageIsSend={messageIsSend}
         setMessageIsSend={setMessageIsSend}
@@ -35,8 +37,7 @@ export function Home() {
         messageIsSend={messageIsSend}
       />
       <Footer />
-
-      <ButtonOtherPortfolio />
+      <Contact />
     </m.div>
   );
 }

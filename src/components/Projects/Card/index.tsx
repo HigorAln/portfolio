@@ -68,7 +68,7 @@ export function Card({ project, index }: Props) {
         </m.h1>
 
         <m.div className="w-full h-full flex flex-col z-10 justify-center gap-3 px-5">
-          <m.h1 className="text-black opacity-100 font-poppins text-2xl">
+          <m.h1 className="text-black dark:text-style-g-ed opacity-100 font-poppins text-2xl">
             {project.title}
           </m.h1>
           {/* <m.p className="text-black opacity-100 font-poppins text-sm underline">

@@ -9,9 +9,15 @@ h4,
 h5,
 h6,
 p {
-	@apply text-gray-800;
+  @apply text-gray-800;
+}
+
+body,
+html {
+  @apply bg-white dark:bg-[#161616];
+  scroll-behavior: smooth;
 }
 
 .border-image {
-	border-radius: 30% 70% 37% 63% / 30% 30% 70% 70%;
+  border-radius: 30% 70% 37% 63% / 30% 30% 70% 70%;
 }

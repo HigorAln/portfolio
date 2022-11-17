@@ -5,15 +5,24 @@ interface Props {
   children: ReactNode;
   content: string;
   duration?: number;
+  side?: "left" | "right" | "top" | "bottom";
 }
 
-export function Tooltip({ children, content, duration = 300 }: Props) {
+export function Tooltip({
+  children,
+  content,
+  duration = 300,
+  side = "top",
+}: Props) {
   return (
     <TooltipRadix.Provider delayDuration={duration}>
       <TooltipRadix.Root>
         <TooltipRadix.Trigger>{children}</TooltipRadix.Trigger>
         <TooltipRadix.Portal>
-          <TooltipRadix.Content className="bg-gray-800 text-white px-6 py-2 rounded-md">
+          <TooltipRadix.Content
+            side={side}
+            className="z-20 bg-gray-800 dark:bg-style-g-2 text-white px-6 py-2 rounded-md"
+          >
             {content}
             <TooltipRadix.Arrow />
           </TooltipRadix.Content>
