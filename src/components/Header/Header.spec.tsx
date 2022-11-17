@@ -5,6 +5,6 @@ describe("Header", () => {
   it("should be render Header", () => {
     render(<Header />);
 
-    expect(screen.getByAltText("logo")).toBeInTheDocument();
+    expect(screen.getByAltText("lgo")).toBeInTheDocument();
   });
 });
