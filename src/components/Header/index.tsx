@@ -5,30 +5,13 @@ import { Tooltip } from "../ToolTip";
 
 export function Header() {
   const { handleChangeTheme, theme } = useTheme();
-  const [scrollTop, setScrollTop] = React.useState(false);
-
-  React.useEffect(() => {
-    function changeScroll() {
-      const B = document.body; //IE 'quirks'
-      let D = document.documentElement; //IE with doctype
-      D = D.clientHeight ? D : B;
-
-      if (D.scrollTop < 100) {
-        setScrollTop(false);
-      } else {
-        setScrollTop(true);
-      }
-    }
-
-    document.addEventListener("scroll", changeScroll);
-  }, []);
 
   return (
     <header className="fixed z-40 top-0 right-0 left-0 h-16 flex px-4 lg:px-0 justify-center shadow-sm bg-style-w dark:bg-style-background">
       <div className="max-w-5xl w-full flex items-center justify-between">
         <span className="h-full flex items-center">
           <a href="#home">
-            <img src="/favicon.ico" />
+            <img src="/favicon.ico" alt="logo" />
           </a>
         </span>
 
