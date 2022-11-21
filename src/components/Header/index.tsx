@@ -2,17 +2,56 @@ import { Moon, Sun } from "phosphor-react";
 import React from "react";
 import { useTheme } from "../../context/useTheme";
 import { Tooltip } from "../ToolTip";
+import classnames from "classnames";
+import { useRef } from "react";
 
 export function Header() {
   const { handleChangeTheme, theme } = useTheme();
+  const [scrollTop, setScrollTop] = React.useState(false);
+  const [direction, setDirection] = React.useState("up");
+
+  let oldScrollY = 0;
+
+  const controlDirection = () => {
+    const B = document.body; //IE 'quirks'
+    let D = document.documentElement; //IE with doctype
+    D = D.clientHeight ? D : B;
+
+    if (D.scrollTop < 100) {
+      setScrollTop(false);
+    } else {
+      setScrollTop(true);
+    }
+
+    if (window.scrollY > oldScrollY) {
+      setDirection("down");
+    } else {
+      setDirection("up");
+    }
+    oldScrollY = window.scrollY;
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", controlDirection);
+    return () => {
+      window.removeEventListener("scroll", controlDirection);
+    };
+  }, []);
 
   return (
-    <header className="fixed z-40 top-0 right-0 left-0 h-16 flex px-4 lg:px-0 justify-center shadow-sm bg-style-w dark:bg-style-background">
-      <div className="max-w-5xl w-full flex items-center justify-between">
+    <header
+      className={classnames(
+        "fixed z-40 top-0 right-0 left-0 h-16 flex px-4 lg:px-0 justify-center transition-all duration-300 bg-style-w dark:bg-style-background",
+        {
+          "-top-16": direction === "down",
+          "top-0": direction === "up",
+          "shadow-sm": scrollTop,
+        }
+      )}
+    >
+      <div className="max-w-6xl w-full flex items-center justify-between">
         <span className="h-full flex items-center">
-          <a href="#home">
-            <img src="/favicon.ico" alt="logo" />
-          </a>
+          <a href="#home"></a>
         </span>
 
         <span className="flex-1 hidden sm:flex justify-end pr-8">

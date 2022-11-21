@@ -7,10 +7,7 @@ interface Props {
 
 export function Welcome({ messageIsSend }: Props) {
   return (
-    <m.div
-      id="home"
-      className="z-10 w-screen h-[calc(100vh-4rem)] pt-4 flex flex-col items-center justify-center relative"
-    >
+    <m.div className="z-10 w-screen h-[calc(100vh)] flex flex-col items-center justify-center">
       {!messageIsSend ? (
         <AnimatePresence>
           <m.h1
