@@ -4665,6 +4665,11 @@ react-router@6.4.0:
   dependencies:
     "@remix-run/router" "1.0.0"
 
+react-scroll-motion@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-motion/-/react-scroll-motion-0.3.0.tgz#50b473da71521e12fcc39a4a1c7eb1e4dfed2a44"
+  integrity sha512-/7VUbyu0nONmlyQsnivcAOPCdc6GnS6LFL7R3QygtBjVAmA7dD29B/jje3jNa0fLlrwycriXq/Nm9sWgX7A1Bw==
+
 react-universal-interface@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/react-universal-interface/-/react-universal-interface-0.6.2.tgz#5e8d438a01729a4dbbcbeeceb0b86be146fe2b3b"

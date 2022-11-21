@@ -9,7 +9,7 @@ export function Welcome({ messageIsSend }: Props) {
   return (
     <m.div
       id="home"
-      className="z-10 w-screen h-[calc(100vh-4rem)] pt-4 flex flex-col items-center justify-center relative"
+      className="z-10 w-screen h-[calc(100vh)] pt-4 flex flex-col items-center justify-center relative"
     >
       {!messageIsSend ? (
         <AnimatePresence>
