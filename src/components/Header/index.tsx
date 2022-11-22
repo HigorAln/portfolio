@@ -1,9 +1,9 @@
-import { Moon, Sun } from "phosphor-react";
+import { Sun } from "phosphor-react";
 import React from "react";
 import { useTheme } from "../../context/useTheme";
 import { Tooltip } from "../ToolTip";
 import classnames from "classnames";
-import { useRef } from "react";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
 export function Header() {
   const { handleChangeTheme, theme } = useTheme();
@@ -45,7 +45,7 @@ export function Header() {
         {
           "-top-16": direction === "down",
           "top-0": direction === "up",
-          "shadow-sm": scrollTop,
+          "shadow-sm dark:shadow-md": scrollTop,
         }
       )}
     >
@@ -91,23 +91,18 @@ export function Header() {
           </ul>
         </span>
 
-        <span className="h-full flex items-center gap-4">
-          <Tooltip duration={100} content="see the simplest version">
-            <a
-              href="https://portfolio-v2-orcin-nu.vercel.app/"
-              target={"_blank"}
-              className="w-20 h-20 rounded-full flex items-center justify-center"
-              rel="noreferrer"
-            >
-              <span className="text-2xl animate-bye select-none">👋</span>
-            </a>
-          </Tooltip>
-
+        <span className="h-full flex items-center gap-6">
           <button className="" onClick={() => handleChangeTheme()}>
-            {theme === "dark" && <Moon className="text-style-w " size={32} />}
-            {theme === "light" && (
-              <Sun className="text-style-background" size={32} />
+            {theme === "dark" && (
+              <BsFillMoonFill className="text-style-w" size={24} />
             )}
+            {theme === "light" && (
+              <BsFillSunFill className="text-style-background" size={24} />
+            )}
+          </button>
+
+          <button className="bg-slate-900 dark:bg-slate-800 text-style-w py-1 px-4 rounded-lg shadow-md hover:opacity-80 active:bg-style-background transition-opacity">
+            Resume
           </button>
         </span>
       </div>

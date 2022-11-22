@@ -22,6 +22,7 @@ module.exports = {
         title: ["Dancing Script"],
         poppins: ["Poppins"],
         cutive: ["Cutive Mono"],
+        poiret: ["Poiret One"],
       },
       keyframes: {
         bye: {
