@@ -14,7 +14,7 @@ export function Contact() {
        after:mx-auto after:my-0 after:bg-slate-900 dark:after:bg-style-w"
           initial={{ opacity: 0, x: -5 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.5 }}
+          transition={{ delay: 1 }}
         >
           <Tooltip content="Github" side="right">
             <a
@@ -56,7 +56,7 @@ export function Contact() {
        after:mx-auto after:my-0 after:bg-slate-900 dark:after:bg-style-w"
           initial={{ opacity: 0, x: 5 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.5 }}
+          transition={{ delay: 1 }}
         >
           <a
             href="mailto:higor.allan21@gmail.com"
