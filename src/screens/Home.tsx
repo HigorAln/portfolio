@@ -31,12 +31,13 @@ export function Home() {
       />
       <AboutMe />
       <Projects />
-      <MyStack />
+      {/* <MyStack />
       <SayHello
         setMessageIsSend={setMessageIsSend}
         messageIsSend={messageIsSend}
       />
       <Footer />
+       */}
       <Contact />
     </m.div>
   );

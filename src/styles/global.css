@@ -16,7 +16,9 @@ body,
 html {
   @apply bg-white dark:bg-[#161616];
   scroll-behavior: smooth;
+  @apply selection:text-white selection:bg-slate-700;
 }
+
 
 body::-webkit-scrollbar {
   width: 0.6rem;

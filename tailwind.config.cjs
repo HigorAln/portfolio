@@ -35,9 +35,17 @@ module.exports = {
           "60%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(0deg)" },
         },
+        marqueeAnimateIn: {
+          "100%": { transform: "translate(-100%, 0)" },
+        },
+        marqueeAnimateOut: {
+          "100%": { transform: "translate(100%, 0)" },
+        },
       },
       animation: {
         bye: "bye 2.5s ease infinite",
+        marqueeIn: "marqueeAnimateIn 240s linear infinite",
+        marqueeOut: "marqueeAnimateOut 240s linear infinite",
       },
     },
   },

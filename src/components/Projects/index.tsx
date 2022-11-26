@@ -11,36 +11,40 @@ export function Projects() {
   if (error) return null;
 
   return (
-    <m.div className="z-10 flex flex-col items-center w-full px-5" id="studies">
-      <div className="max-w-7xl w-full">
-        <m.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          viewport={{ once: true }}
-          className="text-2xl md:text-4xl font-poiret text-gray-900 dark:text-style-g-ed tracking-widest pt-20"
-        >
-          a brief history
-        </m.p>
-        <m.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          viewport={{ once: true }}
-          className="text-2xl md:text-2xl mt-3 font-poiret mb-8 md:mb-24 text-gray-900 dark:text-style-g-ed tracking-widest"
-        >
-          my story is brief but my evolution is constant
-        </m.p>
-
-        <div className="w-full flex flex-col gap-2">
+    <m.div
+      className="z-10 min-h-[600px] md:min-h-[800px] flex flex-col items-center justify-center w-full px-5"
+      id="studies"
+    >
+      <div className="max-w-7xl flex flex-col w-full min-h-[600px] md:min-h-[800px] h-full">
+        <span className="w-full sm:px-14 xl:px-0 flex flex-col">
+          <m.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-4xl font-poiret text-gray-900 dark:text-style-g-ed tracking-widest pt-20 sm:pt-32"
+          >
+            a brief history
+          </m.p>
+          <m.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-2xl mt-3 font-poiret text-gray-900 dark:text-style-g-ed tracking-widest"
+          >
+            my story is brief but my evolution is constant
+          </m.p>
+        </span>
+        <div className="w-full h-full flex flex-col-reverse md:flex-col gap-8 flex-1 justify-center">
           <span className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <span className="hidden md:flex"></span>
             <span></span>
             {/* PRIMEIRO */}
             <m.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1 }}
+              transition={{ delay: 1.7 }}
               viewport={{ once: true }}
               className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg md:mr-20 md:-ml-20"
             >
@@ -63,7 +67,7 @@ export function Projects() {
             <span></span>
             {/* Segundo */}
             <m.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.4 }}
               viewport={{ once: true }}
@@ -86,9 +90,9 @@ export function Projects() {
           <span className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {/* terceiro */}
             <m.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.7 }}
+              transition={{ delay: 1 }}
               viewport={{ once: true }}
               className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg md:ml-20 md:-mr-20"
             >
