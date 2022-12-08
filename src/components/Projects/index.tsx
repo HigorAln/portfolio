@@ -1,15 +1,28 @@
 import { motion as m } from "framer-motion";
-import {
-  GetProjectsSimpleQuery,
-  useGetProjectsSimpleQuery,
-} from "../../graphql/generated";
-import { Card } from "./Card";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 1.2,
+      staggerDirection: -1,
+    },
+  },
+  // exit: {
+  //   transition: {
+  //     staggerChildren: 0.07,
+  //     staggerDirection: -1,
+  //   },
+  // },
+};
+
+const item = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
 
 export function Projects() {
-  const { data, error } = useGetProjectsSimpleQuery();
-
-  if (error) return null;
-
   return (
     <m.div
       className="z-10 min-h-[600px] md:min-h-[800px] flex flex-col items-center justify-center w-full px-5"
@@ -36,18 +49,22 @@ export function Projects() {
             my story is brief but my evolution is constant
           </m.p>
         </span>
-        <div className="w-full h-full flex flex-col-reverse md:flex-col gap-8 flex-1 justify-center">
-          <span className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <m.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="w-full h-full flex flex-col-reverse md:flex-col gap-8 flex-1 justify-center"
+        >
+          <m.span
+            variants={item}
+            transition={{ delay: 2.4 }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+          >
             <span className="hidden md:flex"></span>
             <span></span>
             {/* PRIMEIRO */}
-            <m.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.7 }}
-              viewport={{ once: true }}
-              className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg md:mr-20 md:-ml-20"
-            >
+            <m.div className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg md:mr-20 md:-ml-20">
               <span>
                 <p className="font-poiret text-3xl dark:text-style-w">
                   Patriani
@@ -62,17 +79,15 @@ export function Projects() {
                 <p className="text-3xl font-poiret dark:text-style-w">08-22</p>
               </span>
             </m.div>
-          </span>
-          <span className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          </m.span>
+          <m.span
+            variants={item}
+            transition={{ delay: 2.0 }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+          >
             <span></span>
             {/* Segundo */}
-            <m.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.4 }}
-              viewport={{ once: true }}
-              className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg"
-            >
+            <m.div className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg">
               <div>
                 <p className="font-poiret text-3xl dark:text-style-w">Workfy</p>
                 <p className="font-poiret text-lg dark:text-style-w">
@@ -86,16 +101,14 @@ export function Projects() {
               </span>
             </m.div>
             <span></span>
-          </span>
-          <span className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          </m.span>
+          <m.span
+            variants={item}
+            transition={{ delay: 1.6 }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+          >
             {/* terceiro */}
-            <m.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1 }}
-              viewport={{ once: true }}
-              className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg md:ml-20 md:-mr-20"
-            >
+            <m.div className="flex justify-between bg-slate-400 dark:bg-slate-700 shadow-xl shadow-gray-300 dark:shadow-gray-900 p-3 rounded-lg md:ml-20 md:-mr-20">
               <span>
                 <p className="font-poiret text-3xl text-style-background dark:text-style-w">
                   Freelancer
@@ -114,8 +127,8 @@ export function Projects() {
             </m.div>
             <span></span>
             <span></span>
-          </span>
-        </div>
+          </m.span>
+        </m.div>
       </div>
     </m.div>
   );
