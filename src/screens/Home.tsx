@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { AboutMe } from "../components/AboutMe";
-import { Footer } from "../components/Footer";
 import { Projects } from "../components/Projects";
-import { SayHello } from "../components/SayHello";
 import { MyStack } from "../components/Stacks";
 import { Welcome } from "../components/Welcome";
 
@@ -10,6 +8,8 @@ import { motion as m } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Contact } from "../components/Contact";
+import { SayHello } from "../components/SayHello";
+import { Footer } from "../components/Footer";
 
 export function Home() {
   const [messageIsSend, setMessageIsSend] = useState(false);
@@ -32,13 +32,10 @@ export function Home() {
       <AboutMe />
       <Projects />
       <MyStack />
-      {/* 
-      <SayHello
-        setMessageIsSend={setMessageIsSend}
-        messageIsSend={messageIsSend}
-      />
+
+      <SayHello />
       <Footer />
-       */}
+
       <Contact />
     </m.div>
   );
