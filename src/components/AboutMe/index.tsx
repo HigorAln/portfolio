@@ -70,6 +70,7 @@ export function AboutMe() {
             >
               <m.p
                 variants={item}
+                viewport={{ once: true }}
                 className="text-base sm:text-xl font-poppins text-slate-700 dark:text-style-g-ed"
               >
                 Individual focused on performance and secure applications.

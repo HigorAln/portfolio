@@ -1,5 +1,6 @@
 import { motion as m } from "framer-motion";
 import { CardWorks } from "./CardWorks";
+import { latestWorks } from "../../utils/projects";
 
 export function MyStack() {
   return (
@@ -42,9 +43,9 @@ export function MyStack() {
         </span>
 
         <div className="flex flex-col gap-16 mt-24 px-5 md:px-20 lg:px-32">
-          <CardWorks isLeft />
-          <CardWorks />
-          <CardWorks isLeft />
+          {latestWorks.map(({ isLeft, ...work }) => (
+            <CardWorks key={work.id} isLeft={isLeft} {...work} />
+          ))}
         </div>
       </div>
     </m.div>

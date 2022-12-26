@@ -1,14 +1,26 @@
+/* eslint-disable react/jsx-no-target-blank */
 import classNames from "classnames";
 import "../../styles/buttonWorks.css";
 import { motion as m } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Tooltip } from "../ToolTip";
 
 interface Props {
   isLeft?: boolean;
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  url: string;
 }
 
-export function CardWorks({ isLeft = false }: Props) {
+export function CardWorks({ isLeft = false, ...props }: Props) {
   return (
-    <span
+    <m.span
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.2 }}
+      viewport={{ once: true }}
       className={classNames(
         "group md:w-full lg:w-[725px] h-[350px] md:h-[450px] flex shadow-md relative",
         {
@@ -24,28 +36,28 @@ export function CardWorks({ isLeft = false }: Props) {
         })}
       >
         <strong className="font-poppins font-extrabold text-style-w text-4xl tracking-widest">
-          Twitter Clone
+          {props.title}
         </strong>
-        <p className="font-poiret text-xl text-style-w">
-          for train i do a clone of the twitter
-        </p>
+        <p className="font-poiret text-xl text-style-w">{props.description}</p>
 
-        <button className="learn-more mt-4">
-          <span className="circle" aria-hidden="true">
-            <span className="icon arrow"></span>
-          </span>
-          <span className="button-text">case study</span>
-        </button>
+        <a href={props.url} target="_blank">
+          <button className="learn-more mt-4">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">case study</span>
+          </button>
+        </a>
       </span>
 
       <img
-        src="https://media.graphassets.com/WEEf3GpNTxSdSs4qxj5W"
+        src={props.image}
         alt="image"
         className="absolute z-0 top-0 left-0 w-full h-full object-cover"
       />
       {/* Fiil */}
       <div className="absolute top-0 left-0 z-10 bg-slate-700 dark:bg-style-g-3 opacity-75 w-full h-full" />
       <m.div className="absolute top-0 left-0 z-20 bg-slate-800 dark:bg-slate-600 group-hover:w-full ease-in-out duration-1000 transition-all opacity-90 w-0 h-full" />
-    </span>
+    </m.span>
   );
 }
