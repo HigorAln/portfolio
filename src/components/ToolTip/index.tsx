@@ -21,10 +21,10 @@ export function Tooltip({
         <TooltipRadix.Portal>
           <TooltipRadix.Content
             side={side}
-            className="z-20 bg-gray-200 dark:bg-style-g-2 text-white px-6 py-2 rounded-md"
+            className="z-20 bg-gray-700 dark:bg-style-g-2 text-white px-6 py-2 rounded-md"
           >
             {content}
-            <TooltipRadix.Arrow className="fill-gray-200" />
+            <TooltipRadix.Arrow className="fill-gray-700" />
           </TooltipRadix.Content>
         </TooltipRadix.Portal>
       </TooltipRadix.Root>

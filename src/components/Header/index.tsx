@@ -101,9 +101,12 @@ export function Header() {
             )}
           </button>
 
-          <button className="bg-slate-900 dark:bg-slate-800 text-style-w py-1 px-4 rounded-lg shadow-md hover:opacity-80 active:bg-style-background transition-opacity">
+          <a
+            href="/downloads/curriculo.pdf"
+            className="bg-slate-900 dark:bg-slate-800 text-style-w py-1 px-4 rounded-lg shadow-md hover:opacity-80 active:bg-style-background transition-opacity"
+          >
             Resume
-          </button>
+          </a>
         </span>
       </div>
     </header>
