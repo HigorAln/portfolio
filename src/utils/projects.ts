@@ -132,3 +132,30 @@ export const projects = [
     github: "https://github.com/HigorAln/new-dt-money-2022",
   },
 ];
+
+export const latestWorks = [
+  {
+    id: "1",
+    title: "Website Patriani",
+    description: "Responsive website and integrated with several systems",
+    image: "/images/latestWorks/patriani.png",
+    isLeft: true,
+    url: "https://construtorapatriani.com.br",
+  },
+  {
+    id: "2",
+    title: "Sales system",
+    description: "sales portal that generates billions of reais per year",
+    image: "/images/latestWorks/portal.png",
+    isLeft: false,
+    url: "https://construtorapatriani.com.br",
+  },
+  {
+    id: "1",
+    title: "Website Patriani",
+    description: "Responsive website and integrated with several systems",
+    image: "/images/latestWorks/patriani.png",
+    isLeft: true,
+    url: "https://construtorapatriani.com.br",
+  },
+];

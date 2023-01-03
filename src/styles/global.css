@@ -16,6 +16,27 @@ body,
 html {
   @apply bg-white dark:bg-[#161616];
   scroll-behavior: smooth;
+  @apply selection:text-white selection:bg-slate-700;
+}
+
+
+body::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+body::-webkit-scrollbar-track {
+  @apply bg-white dark:bg-style-background
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-slate-700;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500;
+  cursor: pointer;
 }
 
 .border-image {
