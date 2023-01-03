@@ -103,6 +103,7 @@ export function Header() {
 
           <a
             href="/downloads/curriculo.pdf"
+            target="_blank"
             className="bg-slate-900 dark:bg-slate-800 text-style-w py-1 px-4 rounded-lg shadow-md hover:opacity-80 active:bg-style-background transition-opacity"
           >
             Resume
