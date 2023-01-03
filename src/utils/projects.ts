@@ -151,10 +151,11 @@ export const latestWorks = [
     url: "https://construtorapatriani.com.br",
   },
   {
-    id: "1",
-    title: "Website Patriani",
-    description: "Responsive website and integrated with several systems",
-    image: "/images/latestWorks/patriani.png",
+    id: "3",
+    title: "Clientes system",
+    description:
+      "customer space, made so that he can control his payments, and open help tickets",
+    image: "/images/latestWorks/cliente.png",
     isLeft: true,
     url: "https://construtorapatriani.com.br",
   },
