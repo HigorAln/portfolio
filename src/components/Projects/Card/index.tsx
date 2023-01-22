@@ -1,6 +1,5 @@
 import { LayoutGroup, motion as m } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { GetProjectsSimpleQuery } from "../../../graphql/generated";
 
 interface Props {
   project: {
